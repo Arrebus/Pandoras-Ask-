@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Pandoras Ask</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color: #28282B;
+                text-align: center;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="container p-2 bg-dark text-white">
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4" id="nickmain">
+            <h2>Pandoras Ask(Samuel får INTE spela!!)</h2>
+            <form class="text-left" enctype="application/x-www-form-urlencoded" id="subnickform">                          
+                <div class="form-group">
+                    <label for="join">Välj användarnamn:</label>
+                    <input type="text" placeholder="Välj ett PASSANDE smeknamn..." class="form-control" id="nickname" name="join" required>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" id="subnick">Nästa</button>                
+                </div>
+                
+            </form>
+            <div>
+
+
+            </div>
+        </main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none">
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none" id="lobbymain">
+            <h2>Börja spela</h2>
+            <button class="btn btn-info d-none" id="joinAlt">Gå med/Skapa rum!</button>
+            <form class="text-left" enctype="application/x-www-form-urlencoded" id="joinForm">                          
+                <div class="form-group">
+                    <label for="join">Lobbykod:</label>
+                    <input type="text" placeholder="Skapa/gå med i rum" class="form-control" id="join" name="join" required>
+                </div>
+                <div class="text-right">                 
+                    <button class="btn btn-primary" id="joinBtn">Gå med rum!</button>
+                    <button class="btn btn-danger d-none" id="back">Tillbaka</button>                  
+                </div>
+                
+            </form>
+            <div>
+
+
+            </div>
+        </main>
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none" id="gamemain">
+            <button class="btn btn-danger float-left" id="backBtn">tillbaka</button>
+            <div class="border border-info">
+                <h2>Hur det går till:</h2>
+                <ul>
+                    <li>När alla spelare är redo startar spelet(minst 3 spelare)</li>
+                    <li>När spelet startar väljer du en spelare du vill ställa en busig fråga!</li>
+                    <li>När alla spelare har skickat in sina frågor så slumpas de och visas sedan anonymt</li>
+                    <li>Får du en fråga får du välja att dricka eller svara...</li>
+                    <li>Om du ska svara, svara ÄRLIGT</li>
+                </ul>
+              </div>
+            <table class="table table-dark table-striped table-hover" id="table">
+                <thead class="thead-dark">
+                  <th scope="col">Spelare</th>
+                  <th scope="col">Redo</th>
+                </thead>
+                <tbody id="tablebody">
+                    
+                </tbody>
+              </table>
+              <button class="btn btn-success" id="ready">Redo!</button>
+              <button class="btn btn-danger d-none" id="uready">inte redo...</button>
+
+
+        </main>
+
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none" id="questionBox">
+            <select id="selectPlayer" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option>Spelare...</option>
+            </select>
+            <input type="text" placeholder="Fråga..." class="form-control" id="qInput" name="Question" required>
+              <button class="btn btn-success" id="sendQ">skicka fråga!</button>
+        </main>
+
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none" id="waitRoom">
+            <h1>Fråga skickad!</h1>
+            <p>Väntar på alla sega dömhövven... hetsa dem till att bli klara!<br>Eller så dricker du lite under tiden(bara en idé hehe)</p>
+        </main>
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4 d-none" id="qDisp">
+            <div id="Qdisp" class="bg-primary">
+                <h1 id="Qres">placeholder</h1>
+                <p id="Qcont">placeholder</p>
+                <p id="Qpun" class="text-danger">Svara eller dick:</p>
+            </div>
+              <button class="btn btn-success d-none" id="nextQ">Nästa fråga</button>
+        </main>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
+    </body>
+</html>

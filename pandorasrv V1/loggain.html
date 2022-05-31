@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Logga in</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color: #28282B;
+                text-align: center;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="container p-2 bg-dark text-white">
+        <main style="background:transparent !important" class="jumbotron jumbotron-dark text-center mb-5 pb-4">
+            <h1 class="display-3">Välkommen!<h1>
+            <p class="lead">Välj ett användarnamn!</p>
+            <form method="POST" class="text-left" enctype="application/x-www-form-urlencoded">                          
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nickname" name="nickname" required>
+                </div>
+                <div class="text-right">                 
+                    <button type="submit" class="btn btn-primary mr-0">Gå till chatten!</button>                  
+                </div>
+            </form>
+        </main>
+
+
+
+    </body>
+</html>
